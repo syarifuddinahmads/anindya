@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useRef } from 'react';
+import TypewriterComponent from 'typewriter-effect';
 
 export default function Page() {
   // Tentukan tipe HTMLCanvasElement untuk canvasRef
@@ -101,26 +102,26 @@ export default function Page() {
       dead: boolean;
       history: { x: number; y: number }[]; // Update history type
       madeChilds: unknown;
-      
+
       constructor(public x: number, public y: number, public targetX: number, public targetY: number, public shade: number, public offsprings: number) {
         this.dead = false;
         this.history = [];
       }
-    
+
       update(delta: number) {
         if (this.dead) return;
-    
+
         const canvas = canvasRef.current;
         if (!canvas) return; // pastikan canvas tersedia
         const ctx = canvas.getContext('2d');
         if (!ctx) return; // pastikan context ada
-    
+
         const xDiff = this.targetX - this.x;
         const yDiff = this.targetY - this.y;
         if (Math.abs(xDiff) > 3 || Math.abs(yDiff) > 3) {
           this.x += xDiff * 2 * delta;
           this.y += yDiff * 2 * delta;
-    
+
           this.history.push({ x: this.x, y: this.y });
           if (this.history.length > 20) this.history.shift();
         } else {
@@ -135,7 +136,7 @@ export default function Page() {
           this.madeChilds = true;
           this.history.shift();
         }
-    
+
         if (this.history.length === 0) this.dead = true;
         else if (this.offsprings) {
           for (let i = 0; i < this.history.length; i++) {
@@ -153,7 +154,7 @@ export default function Page() {
         }
       }
     }
-    
+
 
     const birthday = new Birthday();
     window.onresize = () => birthday.resize();
@@ -173,7 +174,13 @@ export default function Page() {
 
   return (
     <div>
-      <h1 className='hbd-anindya'>Happy Birthday, Anindyaaa...</h1>
+      <h1 className='hbd-anindya'>
+        <TypewriterComponent
+          onInit={(typewriter) => {
+            typewriter.typeString("Happy Birthday, Anindyaaa...").pauseFor(3500)
+              .start();
+          }}
+        /></h1>
       <canvas ref={canvasRef} style={{ display: 'block', position: 'absolute', top: 0, left: 0 }}></canvas>
     </div>
   );

@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #65d093;
+  --foreground: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #7d93e1;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -27,10 +27,60 @@ h1.hbd-anindya {
   transform: translate(-50%, -50%);
   color: #fff;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 5em;
+  font-size: 5em; /* Default for large screens */
   font-weight: 900;
   user-select: none;
   line-height: 1.5em;
   z-index: 999;
   text-align: center;
+}
+
+@media (max-width: 1200px) { /* Tablet/desktop */
+  h1.hbd-anindya {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 900px) { /* Tablet */
+  h1.hbd-anindya {
+    font-size: 3em;
+    top: 35%;
+  }
+}
+
+@media (max-width: 600px) { /* Mobile */
+  h1.hbd-anindya {
+    font-size: 2.5em;
+    top: 35%;
+  }
+}
+
+@media (max-width: 400px) { /* Small mobile */
+  h1.hbd-anindya {
+    font-size: 2em;
+    top: 35%;
+  }
+}
+
+
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-circle {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ddd;
+  border-top: 5px solid #888;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

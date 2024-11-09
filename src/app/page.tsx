@@ -6,7 +6,7 @@ import TypewriterComponent from 'typewriter-effect';
 export default function Page() {
   const router = useRouter()
   const greeting = "Hai, Anindyaaa...";
-  const heartfeltMessage = "Semoga hari-harimu selalu dipenuhi cinta, kebahagiaan, dan semua hal yang kamu impikan secepatnya dikabulkan, Amin...";
+  const heartfeltMessage = "Semoga hari-harimu dipenuhi cinta, kebahagiaan, dan yang kamu impikan secepatnya dikabulkan, Amin...";
 
   return (
     <div>
