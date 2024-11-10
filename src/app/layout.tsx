@@ -14,12 +14,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Happy Birthday Anindya Berlinani Santoso - Special Message From Ahmad Syarifuddin",
+  title: "Happy Birthday Anindya Berlinani Santoso - Special Message ",
   description: "Celebrate Anindya Berlinani Santoso’s birthday with a heartfelt surprise.",
   keywords: ["Anindya Berlinani Santoso", "Happy Birthday", "Birthday Message", "Ahmad Syarifuddin"],
   openGraph: {
     title: "Happy Birthday Anindya!",
-    description: "A special birthday message for Anindya Berlinani Santoso from Ahmad Syarifuddin.",
+    description: "A special birthday message for Anindya Berlinani Santoso .",
     url: "https://anindyabs.vercel.app",
     type: "website",
     images: [
@@ -48,13 +48,13 @@ export default function RootLayout({
           <main className="flex flex-col gap-6 row-start-2 items-center sm:items-start">
             {children}
           </main>
-          <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center italic">
+          {/* <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center italic">
             <small className="flex items-center gap-2 text-slate-50 absolute" style={{ fontSize: '10px' }}>
               <a href="https://www.linkedin.com/in/syarifuddinahmads/" target="_blank" rel="noopener noreferrer">
                 Ahmad Syarifuddin
               </a>
             </small>
-          </footer>
+          </footer> */}
         </div>
       </body>
     </html>
